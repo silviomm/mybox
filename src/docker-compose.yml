@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  mybox:
+    build: .
+    image: silviomm.com/mybox
+    network_mode: "host"
+    volumes:
+      - "..:/app"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "${HOME}/.ssh:/host-ssh"
+    working_dir: /app/src
